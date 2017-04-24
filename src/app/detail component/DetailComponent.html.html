@@ -1,0 +1,93 @@
+
+    <div class="col" *ngFor="let i of doc" [hidden]="!showList">
+    <div class="card horizontal">
+      <div class="card-image">
+        <img [src]="i.image">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p><b>Name:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>{{i.name}}</strong></p>
+
+<!--
+          <span class="starRating">
+  <input id="rating5" type="radio" name="rating" value="5">
+  <label for="rating5">5</label>
+  <input id="rating4" type="radio" name="rating" value="4">
+  <label for="rating4">4</label>
+  <input id="rating3" type="radio" name="rating" value="3">
+  <label for="rating3">3</label>
+  <input id="rating2" type="radio" name="rating" value="2">
+  <label for="rating2">2</label>
+  <input id="rating1" type="radio" name="rating" value="1">
+  <label for="rating1">1</label>
+</span>
+-->
+
+
+          <p><b>Address:</b><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.address}}</strong></p>
+          <p><b>Timing:</b><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.timing}}</strong></p>
+       <!--   <p><b>Fee:</b><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹{{i.fee}}</strong></p>-->
+        </div>
+        <div class="card-action">
+
+          <button class="btn btn-info btn-sm" (click)="onShow(i)">Enquire Now</button>
+        </div>
+    </div>
+    </div></div>
+
+    <div class="container" [hidden]="!show">
+      <hr>
+      <h3 id="prof">Doctor Information </h3>
+      <hr>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" [src]="doc_show.image" class="img-circle img-responsive"> </div>
+
+          <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+            <dl>
+              <dt>DEPARTMENT:</dt>
+              <dd>Administrator</dd>
+              <dt>HIRE DATE</dt>
+              <dd>11/12/2013</dd>
+              <dt>DATE OF BIRTH</dt>
+                 <dd>11/12/2013</dd>
+              <dt>GENDER</dt>
+              <dd>Male</dd>
+            </dl>
+          </div>-->
+          <div class=" col-md-9 col-lg-9 " >
+            <table class="table table-user-information">
+
+              <tbody>
+              <tr>
+                <td>Name</td>
+                <td>{{doc_show.name}}</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>{{doc_show.address}}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>xyz@gmail.com</td>
+              </tr>
+              <tr>
+              <td>Phone Number</td>
+              <td>9876543210</td>
+              </tr>
+              <tr>
+                <td>Timing</td>
+                <td>{{doc_show.timing}}</td>
+              </tr>
+              <tr>
+                <td><button class="btn btn-info">Take Appointment</button> </td>
+                <td> <button class="btn btn-danger" style="background-color: red;" (click)="band()" >X</button></td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div></div>
+

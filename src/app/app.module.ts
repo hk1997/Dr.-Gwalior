@@ -1,20 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {ImformationComponent} from "./ImformationPortal/imformation.component";
+import {ImformationService} from "./ImformationPortal/imformation.service";
+import {AddComponent} from "./add.component";
+import {HomeComponent} from "./home component/HomeComponent";
+import {Routes, RouterModule} from "@angular/router";
+import {DetailComponent} from "./detail component/DetailComponent.component";
+
+const appRoutes:Routes=[{
+  path:'information', component:ImformationComponent
+}]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,ImformationComponent,AddComponent,HomeComponent,DetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ImformationService,ReactiveFormsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
